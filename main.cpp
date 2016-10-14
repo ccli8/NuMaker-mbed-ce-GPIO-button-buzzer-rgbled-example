@@ -1,3 +1,4 @@
+// For NuMaker-PFM-NUC472 GPIO pins connected to rgbled, green led, buzzer
 #include "mbed.h"
 
 DigitalOut    rgbled_B(PD_8); // low-active
