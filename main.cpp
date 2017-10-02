@@ -16,6 +16,14 @@ DigitalOut    greenled(PB_12); // low-active
 DigitalOut    buzzer(PE_2);  // low-active
 DigitalIn     button_SW1(PA_15); // press button =0
 DigitalIn     button_SW2(PA_14); // press button =0
+#elif defined(TARGET_NUMAKER_PFM_M487)
+DigitalOut    rgbled_B(PH_1); // in M487 rgbled_B is yellow, not blue. low-active
+DigitalOut    rgbled_R(PH_0); // low-active
+DigitalOut    rgbled_G(PH_2); // low-active
+DigitalOut    greenled(PH_2); // in M487 use the pin to connect the led, low-active
+DigitalOut    buzzer(PF_11);  // in M487 use the pin to connect the buzzer, low-active
+DigitalIn     button_SW1(PC_10); // in M487 button_SW1 is SW2, press button =0
+DigitalIn     button_SW2(PC_9); // in M487 button_SW2 is SW3, press button =0
 #endif
 
 // main() runs in its own thread in the OS
