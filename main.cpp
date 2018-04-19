@@ -1,37 +1,37 @@
-// For NuMaker-PFM-NUC472 GPIO pins connected to rgbled, green led, buzzer
 #include "mbed.h"
+
 #if defined(TARGET_NUMAKER_PFM_NUC472)
-DigitalOut    rgbled_B(PD_8); // low-active
-DigitalOut    rgbled_R(PD_9); // low-active
-DigitalOut    rgbled_G(PA_4); // low-active
-DigitalOut    greenled(PG_0); // low-active
-DigitalOut    buzzer(PD_11);  // low-active
-DigitalIn     button_SW1(PC_12); // press button =0
-DigitalIn     button_SW2(PC_13); // press button =0
+DigitalOut    rgbled_B(LED_BLUE);       // low-active
+DigitalOut    rgbled_R(LED_RED);        // low-active
+DigitalOut    rgbled_G(LED_GREEN);      // low-active
+DigitalOut    greenled(PG_0);           // low-active
+DigitalOut    buzzer(PD_11);            // low-active
+DigitalIn     button_SW1(SW1);          // press button =0
+DigitalIn     button_SW2(SW2);          // press button =0
 #elif defined(TARGET_NUMAKER_PFM_M453)
-DigitalOut    rgbled_B(PD_7); // low-active
-DigitalOut    rgbled_R(PD_2); // low-active
-DigitalOut    rgbled_G(PD_3); // low-active
-DigitalOut    greenled(PB_12); // low-active
-DigitalOut    buzzer(PE_2);  // low-active
-DigitalIn     button_SW1(PA_15); // press button =0
-DigitalIn     button_SW2(PA_14); // press button =0
+DigitalOut    rgbled_B(LED_BLUE);       // low-active
+DigitalOut    rgbled_R(LED_RED);        // low-active
+DigitalOut    rgbled_G(LED_GREEN);      // low-active
+DigitalOut    greenled(PB_12);          // low-active
+DigitalOut    buzzer(PE_2);             // low-active
+DigitalIn     button_SW1(SW2);          // press button =0
+DigitalIn     button_SW2(SW3);          // press button =0
 #elif defined(TARGET_NUMAKER_PFM_M487)
-DigitalOut    rgbled_B(PH_1); // in M487 rgbled_B is yellow, not blue. low-active
-DigitalOut    rgbled_R(PH_0); // low-active
-DigitalOut    rgbled_G(PH_2); // low-active
-DigitalOut    greenled(PH_2); // in M487 use the pin to connect the led, low-active
-DigitalOut    buzzer(PF_11);  // in M487 use the pin to connect the buzzer, low-active
-DigitalIn     button_SW1(PC_10); // in M487 button_SW1 is SW2, press button =0
-DigitalIn     button_SW2(PC_9); // in M487 button_SW2 is SW3, press button =0
+DigitalOut    rgbled_B(LED_YELLOW);     // in M487, rgbled_B is yellow, not blue, low-active
+DigitalOut    rgbled_R(LED_RED);        // low-active
+DigitalOut    rgbled_G(LED_GREEN);      // low-active
+DigitalOut    greenled(D2);             // in M487, change the pin to match real hardware, low-active
+DigitalOut    buzzer(D3);               // in M487, change the pin to match real hardware, low-active
+DigitalIn     button_SW1(SW2);          // in M487, button_SW1 is SW2, press button =0
+DigitalIn     button_SW2(SW3);          // in M487, button_SW2 is SW3, press button =0
 #elif defined(TARGET_NUMAKER_PFM_NANO130)
-DigitalOut    rgbled_B(PE_10); // in NANO130 rgbled_B is yellow, not blue. low-active
-DigitalOut    rgbled_R(PE_9); // low-active
-DigitalOut    rgbled_G(PE_11); // low-active
-DigitalOut    greenled(PE_11); // in NANO130 use the pin to connect the led, low-active
-DigitalOut    buzzer(PA_13);  // in NANO130 use the pin to connect the buzzer, low-active
-DigitalIn     button_SW1(PE_5); // in NANO130 button_SW1 is SW2, press button =0
-DigitalIn     button_SW2(PE_6); // in NANO130 button_SW2 is SW3, press button =0
+DigitalOut    rgbled_B(LED_YELLOW);     // in NANO130, rgbled_B is yellow, not blue, low-active
+DigitalOut    rgbled_R(LED_RED);        // low-active
+DigitalOut    rgbled_G(LED_GREEN);      // low-active
+DigitalOut    greenled(D2);             // in NANO130, change the pin to match real hardware, low-active
+DigitalOut    buzzer(D3);               // in NANO130, change the pin to match real hardware, low-active
+DigitalIn     button_SW1(SW1);          // press button =0
+DigitalIn     button_SW2(SW2);          // press button =0
 #endif
 
 // main() runs in its own thread in the OS
