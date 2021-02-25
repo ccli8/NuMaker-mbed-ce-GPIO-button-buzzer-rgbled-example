@@ -41,7 +41,9 @@ int main() {
     rgbled_B=1; rgbled_R=1; rgbled_G=1;
     greenled=1;
     buzzer=1;
-                        
+#ifdef MBED_MAJOR_VERSION
+    printf("Mbed OS version %d.%d.%d\r\n\n", MBED_MAJOR_VERSION, MBED_MINOR_VERSION, MBED_PATCH_VERSION);
+#endif                      
     while (true) {
         // press SW1 will turn on greeled and RGBLED=blue
         if (button_SW1==0) {
